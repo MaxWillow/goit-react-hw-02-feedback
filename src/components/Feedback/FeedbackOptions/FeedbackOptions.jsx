@@ -2,7 +2,7 @@ import React from 'react';
 import T from 'prop-types';
 
 const FeedbackOptions = ({
-  options: { good, neutral, bad },
+  options: [good, neutral, bad],
   onLeaveFeedback,
 }) => (
   <>
@@ -19,7 +19,7 @@ const FeedbackOptions = ({
 );
 
 FeedbackOptions.propTypes = {
-  options: T.objectOf(T.string).isRequired,
+  options: T.arrayOf(T.string).isRequired,
   onLeaveFeedback: T.func.isRequired,
 };
 

@@ -43,12 +43,13 @@ export default class Section extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     const percentageOfPositiveFeedbacks = this.countPositiveFeedbackPercentage();
+    const options = Object.keys(this.state);
 
     return (
       <section>
         <h2>{title}</h2>
         <FeedbackOptions
-          options={{ good: 'good', neutral: 'neutral', bad: 'bad' }}
+          options={options}
           onLeaveFeedback={this.countFeedbacks}
         />
         {this.countTotalFeedback() > 0 ? (
