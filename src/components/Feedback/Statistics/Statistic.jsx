@@ -9,8 +9,7 @@ Statistic.defaultProps = {
 
 Statistic.propTypes = {
   label: T.string.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
-  value: T.any,
+  value: T.oneOfType([T.number, T.string]),
 };
 
 export default Statistic;
